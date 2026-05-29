@@ -1,16 +1,22 @@
 package com.spotify.util;
 
-// Author: OOP Final Exam Group – ITE23005 HK252
-// Date: 2026-05-23
-// Purpose: Form validation utility – empty fields, type checks, range checks
+/*
+ * Student Name: Huỳnh Vũ Anh Khoa
+ * Student ID: 97482503608
+ * Course: Object Oriented Programming
+ * Project: Spotify
+ */
 
+/*
+ * Student Name: Nguyễn Thiên Kỳ
+ * Student ID: 77482503643
+ * Course: Object Oriented Programming
+ * Project: Spotify
+ */
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Validation utility.
- * Uses Stream API + lambda for compact validation logic.
- */
+
 public final class ValidationUtil {
 
     private ValidationUtil() {}
