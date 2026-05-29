@@ -1,8 +1,18 @@
 package com.spotify;
 
-// Author: OOP Final Exam Group – ITE23005 HK252
-// Date: 2026-05-23
-// Purpose: Tạo SHA-256 hash cho password, in ra SQL để chạy trong MySQL
+/*
+ * Student Name: Huỳnh Vũ Anh Khoa
+ * Student ID: 97482503608
+ * Course: Object Oriented Programming
+ * Project: Spotify
+ */
+
+/*
+ * Student Name: Nguyễn Thiên Kỳ
+ * Student ID: 77482503643
+ * Course: Object Oriented Programming
+ * Project: Spotify
+ */
 
 import java.security.MessageDigest;
 

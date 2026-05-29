@@ -1,8 +1,18 @@
 package com.spotify.util;
 
-// Author: OOP Final Exam Group – ITE23005 HK252
-// Date: 2026-05-23
-// Purpose: ExcelExporter – exports track data to .xlsx using Apache POI
+/*
+ * Student Name: Huỳnh Vũ Anh Khoa
+ * Student ID: 97482503608
+ * Course: Object Oriented Programming
+ * Project: Spotify
+ */
+
+/*
+ * Student Name: Nguyễn Thiên Kỳ
+ * Student ID: 77482503643
+ * Course: Object Oriented Programming
+ * Project: Spotify
+ */
 
 import com.spotify.model.Track;
 import org.apache.poi.ss.usermodel.*;
@@ -12,10 +22,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.*;
 import java.util.List;
 
-/**
- * REST/Export Integration – Option 3: Excel Export.
- * Uses Apache POI with column headers, auto-fit widths, summary row at bottom.
- */
 public class ExcelExporter {
 
     public static void exportTracks(List<Track> tracks, File outputFile) throws IOException {

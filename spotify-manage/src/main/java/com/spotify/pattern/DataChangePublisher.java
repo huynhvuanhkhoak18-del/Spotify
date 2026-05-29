@@ -1,8 +1,18 @@
 package com.spotify.pattern;
 
-// Author: OOP Final Exam Group – ITE23005 HK252
-// Date: 2026-05-23
-// Purpose: Observer pattern – chart auto-refresh when data changes
+/*
+ * Student Name: Huỳnh Vũ Anh Khoa
+ * Student ID: 97482503608
+ * Course: Object Oriented Programming
+ * Project: Spotify
+ */
+
+/*
+ * Student Name: Nguyễn Thiên Kỳ
+ * Student ID: 77482503643
+ * Course: Object Oriented Programming
+ * Project: Spotify
+ */
 
 import java.util.ArrayList;
 import java.util.List;

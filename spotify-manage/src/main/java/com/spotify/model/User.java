@@ -1,14 +1,21 @@
 package com.spotify.model;
 
-// Author: OOP Final Exam Group – ITE23005 HK252
-// Date: 2026-05-23
-// Purpose: User domain model with role association
+/*
+ * Student Name: Huỳnh Vũ Anh Khoa
+ * Student ID: 97482503608
+ * Course: Object Oriented Programming
+ * Project: Spotify
+ */
+
+/*
+ * Student Name: Nguyễn Thiên Kỳ
+ * Student ID: 77482503643
+ * Course: Object Oriented Programming
+ * Project: Spotify
+ */
 
 import java.time.LocalDateTime;
 
-/**
- * User entity. Demonstrates encapsulation and association with Role.
- */
 public class User {
     private int id;
     private String username;

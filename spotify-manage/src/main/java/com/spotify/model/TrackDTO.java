@@ -1,9 +1,18 @@
 package com.spotify.model;
 
-// Author: OOP Final Exam Group – ITE23005 HK252
-// Date: 2026-05-23
-// Purpose: Immutable Track summary DTO for table display
+/*
+ * Student Name: Huỳnh Vũ Anh Khoa
+ * Student ID: 97482503608
+ * Course: Object Oriented Programming
+ * Project: Spotify
+ */
 
-/** Lightweight track summary for table rendering – Java record */
+/*
+ * Student Name: Nguyễn Thiên Kỳ
+ * Student ID: 77482503643
+ * Course: Object Oriented Programming
+ * Project: Spotify
+ */
+
 public record TrackDTO(int id, String name, String artist, String genre,
                        int popularity, String duration, boolean explicit) {}

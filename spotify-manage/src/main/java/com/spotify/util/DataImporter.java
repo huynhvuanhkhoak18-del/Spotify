@@ -1,8 +1,18 @@
 package com.spotify.util;
 
-// Author: OOP Final Exam Group – ITE23005 HK252
-// Date: 2026-05-23
-// Purpose: DataImporter – reads Spotify CSV and batch-inserts via JDBC PreparedStatement
+/*
+ * Student Name: Huỳnh Vũ Anh Khoa
+ * Student ID: 97482503608
+ * Course: Object Oriented Programming
+ * Project: Spotify
+ */
+
+/*
+ * Student Name: Nguyễn Thiên Kỳ
+ * Student ID: 77482503643
+ * Course: Object Oriented Programming
+ * Project: Spotify
+ */
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
@@ -15,16 +25,6 @@ import java.sql.*;
 import java.util.*;
 import java.util.function.Consumer;
 
-/**
- * CSV bulk-importer for Spotify Tracks dataset (Kaggle).
- * Uses OpenCSV for parsing and JDBC batch execution for performance.
- * Runs on background thread (SwingWorker calls this).
- *
- * Expected CSV columns (Kaggle spotify-tracks-dataset):
- * track_id, artists, album_name, track_name, popularity, duration_ms, explicit,
- * danceability, energy, key, loudness, mode, speechiness, acousticness,
- * instrumentalness, liveness, valence, tempo, time_signature, track_genre
- */
 public class DataImporter {
 
     private static final int BATCH_SIZE = 500;
@@ -33,12 +33,6 @@ public class DataImporter {
     /** Artist name → DB id cache to avoid repeated SELECTs */
     private final Map<String, Integer> artistCache = new HashMap<>();
 
-    /**
-     * Import CSV file into MySQL.
-     * @param csvFile  Path to the Kaggle spotify_tracks.csv
-     * @param progress Callback receiving progress 0–100
-     * @return number of rows imported
-     */
     public int importCSV(File csvFile, Consumer<Integer> progress) throws Exception {
         int totalLines = countLines(csvFile) - 1; // exclude header
         int imported = 0;

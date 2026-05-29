@@ -1,15 +1,18 @@
 package com.spotify.model;
 
-// Author: OOP Final Exam Group – ITE23005 HK252
-// Date: 2026-05-23
-// Purpose: Data Transfer Objects using Java 16+ records (immutable)
-
-/**
- * Java Records – Modern Java Feature (Java 16+).
- * Records are immutable DTOs with auto-generated constructor, getters, equals, hashCode, toString.
+/*
+ * Student Name: Huỳnh Vũ Anh Khoa
+ * Student ID: 97482503608
+ * Course: Object Oriented Programming
+ * Project: Spotify
  */
 
-/** Lightweight user DTO for session cache */
+/*
+ * Student Name: Nguyễn Thiên Kỳ
+ * Student ID: 77482503643
+ * Course: Object Oriented Programming
+ * Project: Spotify
+ */
 public record UserDTO(int id, String username, String fullName, String role) {
     public boolean isAdmin() { return "ADMIN".equalsIgnoreCase(role); }
 }

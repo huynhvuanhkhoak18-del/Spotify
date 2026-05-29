@@ -1,12 +1,17 @@
 package com.spotify.model;
 
-// Author: OOP Final Exam Group – ITE23005 HK252
-// Date: 2026-05-23
-// Purpose: Domain model – Role entity
+/*
+ * Student Name: Huỳnh Vũ Anh Khoa
+ * Student ID: 97482503608
+ * Course: Object Oriented Programming
+ * Project: Spotify
+ */
 
-/**
- * Role entity representing user permission levels.
- * Demonstrates encapsulation with private fields + getters/setters.
+/*
+ * Student Name: Nguyễn Thiên Kỳ
+ * Student ID: 77482503643
+ * Course: Object Oriented Programming
+ * Project: Spotify
  */
 public class Role {
     private int id;

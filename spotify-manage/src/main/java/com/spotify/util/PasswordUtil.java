@@ -7,10 +7,18 @@ package com.spotify.util;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/**
- * Utility class for SHA-256 password hashing.
- * Spec §3.1: passwords must be hashed before storage.
- * Dùng SHA-256 thay BCrypt để tránh lỗi version prefix ($2a vs $2b).
+/*
+ * Student Name: Huỳnh Vũ Anh Khoa
+ * Student ID: 97482503608
+ * Course: Object Oriented Programming
+ * Project: Spotify
+ */
+
+/*
+ * Student Name: Nguyễn Thiên Kỳ
+ * Student ID: 77482503643
+ * Course: Object Oriented Programming
+ * Project: Spotify
  */
 public final class PasswordUtil {
 
