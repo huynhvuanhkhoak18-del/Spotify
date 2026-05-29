@@ -1,0 +1,262 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 264241152 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3713), pid=28128, tid=19276
+#
+# JRE version:  (21.0.9+10) (build )
+# Java VM: OpenJDK 64-Bit Server VM (21.0.9+10-LTS, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages com.spotify.Main
+
+Host: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz, 8 cores, 15G,  Windows 11 , 64 bit Build 26100 (10.0.26100.8328)
+Time: Fri May 29 01:45:17 2026 SE Asia Standard Time elapsed time: 1.024425 seconds (0d 0h 0m 1s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002d5e03c6ea0):  JavaThread "Unknown thread" [_thread_in_vm, id=19276, stack(0x000000f5ec900000,0x000000f5eca00000) (1024K)]
+
+Stack: [0x000000f5ec900000,0x000000f5eca00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6d6e29]
+V  [jvm.dll+0x8b4b76]
+V  [jvm.dll+0x8b712e]
+V  [jvm.dll+0x8b7813]
+V  [jvm.dll+0x283d86]
+V  [jvm.dll+0x6d3745]
+V  [jvm.dll+0x6c747a]
+V  [jvm.dll+0x35e7e8]
+V  [jvm.dll+0x366426]
+V  [jvm.dll+0x3b73fe]
+V  [jvm.dll+0x3b76a8]
+V  [jvm.dll+0x3329ec]
+V  [jvm.dll+0x33353b]
+V  [jvm.dll+0x87deeb]
+V  [jvm.dll+0x3c4381]
+V  [jvm.dll+0x867135]
+V  [jvm.dll+0x457391]
+V  [jvm.dll+0x458f81]
+C  [jli.dll+0x52d0]
+C  [ucrtbase.dll+0x37b0]
+C  [KERNEL32.DLL+0x2e957]
+C  [ntdll.dll+0x427c]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007fff8ddd91c8, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x000002d5e2842b00 WorkerThread "GC Thread#0"                     [id=13356, stack(0x000000f5eca00000,0x000000f5ecb00000) (1024K)]
+  0x000002d5e28536c0 ConcurrentGCThread "G1 Main Marker"            [id=9176, stack(0x000000f5ecb00000,0x000000f5ecc00000) (1024K)]
+  0x000002d5e2856bc0 WorkerThread "G1 Conc#0"                       [id=22880, stack(0x000000f5ecc00000,0x000000f5ecd00000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fff8d4d50d7]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007fff8de4d670] Heap_lock - owner thread: 0x000002d5e03c6ea0
+
+Heap address: 0x0000000704c00000, size: 4020 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 16 size 48 Howl #buckets 8 coarsen threshold 3686 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 4096
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000704c00000, 0x0000000800000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fff8d8c07a9]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.010 Loaded shared library C:\Users\ASUS\Downloads\eclipse-java-2025-12-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.9.v20251105-0741\jre\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff7aa780000 - 0x00007ff7aa78e000 	C:\Users\ASUS\Downloads\eclipse-java-2025-12-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.9.v20251105-0741\jre\bin\javaw.exe
+0x00007ff847380000 - 0x00007ff8475e7000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff846370000 - 0x00007ff846439000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff844a20000 - 0x00007ff844e17000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff844820000 - 0x00007ff84496b000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff829290000 - 0x00007ff8292ae000 	C:\Users\ASUS\Downloads\eclipse-java-2025-12-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.9.v20251105-0741\jre\bin\VCRUNTIME140.dll
+0x00007ff83bcf0000 - 0x00007ff83bd08000 	C:\Users\ASUS\Downloads\eclipse-java-2025-12-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.9.v20251105-0741\jre\bin\jli.dll
+0x00007ff846d60000 - 0x00007ff846f26000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff826e30000 - 0x00007ff8270c2000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8457_none_3e0b2faee331e92d\COMCTL32.dll
+0x00007ff844e20000 - 0x00007ff844e47000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff846580000 - 0x00007ff846629000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff846c80000 - 0x00007ff846cab000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff844e50000 - 0x00007ff844f7c000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff844970000 - 0x00007ff844a13000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff846fa0000 - 0x00007ff846fd2000 	C:\WINDOWS\System32\IMM32.DLL
+0x000000006ba20000 - 0x000000006ba2d000 	C:\Program Files (x86)\360\Total Security\safemon\SafeWrapper.dll
+0x00007ff846440000 - 0x00007ff8464f6000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff846930000 - 0x00007ff8469d7000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff846630000 - 0x00007ff846748000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff83cfd0000 - 0x00007ff83d0d5000 	C:\Program Files (x86)\360\Total Security\safemon\libzdtp64.dll
+0x00007ff845a00000 - 0x00007ff84616e000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ff846f30000 - 0x00007ff846f96000 	C:\WINDOWS\System32\SHLWAPI.dll
+0x00007ff843fb0000 - 0x00007ff84481c000 	C:\WINDOWS\System32\Windows.Storage.dll
+0x00007ff845660000 - 0x00007ff8459e3000 	C:\WINDOWS\System32\combase.dll
+0x00007ff843690000 - 0x00007ff84369b000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff83bcb0000 - 0x00007ff83bcbc000 	C:\Users\ASUS\Downloads\eclipse-java-2025-12-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.9.v20251105-0741\jre\bin\vcruntime140_1.dll
+0x00007ff824860000 - 0x00007ff8248ed000 	C:\Users\ASUS\Downloads\eclipse-java-2025-12-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.9.v20251105-0741\jre\bin\msvcp140.dll
+0x00007fff8d190000 - 0x00007fff8df30000 	C:\Users\ASUS\Downloads\eclipse-java-2025-12-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.9.v20251105-0741\jre\bin\server\jvm.dll
+0x00007ff8470e0000 - 0x00007ff847160000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff843c10000 - 0x00007ff843c6e000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ff838500000 - 0x00007ff838536000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff843bf0000 - 0x00007ff843c04000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ff842ab0000 - 0x00007ff842acb000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff83ec00000 - 0x00007ff83ec0a000 	C:\Users\ASUS\Downloads\eclipse-java-2025-12-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.9.v20251105-0741\jre\bin\jimage.dll
+0x00007ff8419a0000 - 0x00007ff841be2000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ff846750000 - 0x00007ff846829000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ff824700000 - 0x00007ff82473b000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ff843e70000 - 0x00007ff843f18000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff8291f0000 - 0x00007ff829210000 	C:\Users\ASUS\Downloads\eclipse-java-2025-12-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.9.v20251105-0741\jre\bin\java.dll
+
+JVMTI agents: none
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\ASUS\Downloads\eclipse-java-2025-12-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.9.v20251105-0741\jre\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8457_none_3e0b2faee331e92d;C:\Program Files (x86)\360\Total Security\safemon;C:\Users\ASUS\Downloads\eclipse-java-2025-12-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.9.v20251105-0741\jre\bin\server
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages 
+java_command: com.spotify.Main
+java_class_path (initial): C:\Users\ASUS\eclipse-workspace\spotify-manage\target\classes;C:\Users\ASUS\eclipse-workspace\spotify-manage\lib\jcommon-1.0.16\jcommon-1.0.16\jcommon-1.0.16.jar;C:\Users\ASUS\eclipse-workspace\spotify-manage\lib\jcommon-1.0.16\jcommon-1.0.16\jcommon-1.0.16-junit.jar;C:\Users\ASUS\eclipse-workspace\spotify-manage\lib\jcommon-1.0.16\jcommon-1.0.16\jcommon-xml-1.0.16.jar;C:\Users\ASUS\eclipse-workspace\spotify-manage\lib\jfreechart-1.0.19\jfreechart-1.0.19\jfreechart-1.0.19-demo.jar;C:\Users\ASUS\eclipse-workspace\spotify-manage\lib\mysql-connector-j-9.7.0 (1)\mysql-connector-j-9.7.0\mysql-connector-j-9.7.0.jar;C:\Users\ASUS\.m2\repository\com\mysql\mysql-connector-j\8.3.0\mysql-connector-j-8.3.0.jar;C:\Users\ASUS\.m2\repository\com\google\protobuf\protobuf-java\3.25.1\protobuf-java-3.25.1.jar;C:\Users\ASUS\.m2\repository\org\mindrot\jbcrypt\0.4\jbcrypt-0.4.jar;C:\Users\ASUS\.m2\repository\org\jfree\jfreechart\1.5.4\jfreechart-1.5.4.jar;C:\Users\ASUS\.m2\repository\org\apache\poi\poi-ooxml\5.2.5\poi-ooxml-5.2.5.jar;C:\Users\ASUS\.m2\repository\org\apache\poi\poi\5.2.5\poi-5.2.5.jar;C:\Users\ASUS\.m2\repository\commons-codec\commons-codec\1.16.0\commons-codec-1.16.0.jar;C:\Users\ASUS\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\ASUS\.m2\repository\com\zaxxer\SparseBitSet\1.3\SparseBitSet-1.3.jar;C:\Users\ASUS\.m2\repository\org\apache\poi\poi-ooxml-lite\5.2.5\poi-ooxml-lite-5.2.5.jar;C:\Users\ASUS\.m2\repository\org\apache\xmlbeans\xmlbeans\5.2.0\xmlbeans-5.2.0.jar;C:\Users\ASUS\.m2\repository\org\apache\commons\commons-compress\1.25.0\commons-compress-1.25.0.jar;C:\Users\ASUS\.m2\repository\commons-io\commons-io\2.15.0\commons-io-2.15.0.jar;C:\Users\ASUS\.m2\repository\com\github\virtuald\curvesapi\1.08\curvesapi-1.08.jar;C:\Users\ASUS\.m2\repository\org\apache\logging\log4j\log4j-api\2.21.1\log4j-api-2.21.1.jar;C:\Users\ASUS\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\ASUS\.m2\repository\com\opencsv\opencsv\5.9\opencsv-5.9.jar;C:\Users\ASUS\.m2\repository\org\apache\commons\commons-lang3\3.13.0\commons-lang3-3.13.0.jar;C:\Users\ASUS\.m2\repository\org\apache\commons\commons-text\1.11.0\commons-text-1.11.0.jar;C:\Users\ASUS\.m2\repository\commons-beanutils\commons-beanutils\1.9.4\commons-beanutils-1.9.4.jar;C:\Users\ASUS\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\ASUS\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;C:\Users\ASUS\.m2\repository\com\formdev\flatlaf\3.4.1\flatlaf-3.4.1.jar;C:\Users\ASUS\eclipse-workspace\spotify-manage\lib\jfreechart-1.0.19\jfreechart-1.0.19\lib\jfreechart-1.0.19.jar;C:\Users\ASUS\eclipse-workspace\spotify-manage\lib\jfreechart-1.0.19\jfreechart-1.0.19\lib\jcommon-1.0.23.jar;C:\Users\ASUS\eclipse-workspace\spotify-manage\lib\jfreechart-1.0.19\jfreechart-1.0.19\lib\jfreesvg-2.0.jar;C:\Users\ASUS\eclipse-workspace\spotify-manage\lib\jfreechart-1.0.19\jfreechart-1.0.19\lib\orsoncharts-1.4-eval-nofx.jar;C:\Users\ASUS\eclipse-workspace\spotify-manage\lib\jfreechart-1.0.19\jfreechart-1.0.19\lib\orsonpdf-1.6-eval.jar;C:\Users\ASUS\eclipse-workspace\spotify-manage\lib\jfreechart-1.0.19\jfreechart-1.0.19\lib\jfreechart-1.0.19-experimental.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 264241152                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4215275520                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 4215275520                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Release file:
+<release file has not been read>
+Environment Variables:
+PATH=C:/Users/ASUS/Downloads/eclipse-java-2025-12-R-win32-x86_64/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.9.v20251105-0741/jre/bin/server;C:/Users/ASUS/Downloads/eclipse-java-2025-12-R-win32-x86_64/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.9.v20251105-0741/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\ASUS\AppData\Local\Programs\Python\Python314\Scripts\;C:\Users\ASUS\AppData\Local\Programs\Python\Python314\;C:\Users\ASUS\AppData\Local\Programs\Python\Launcher\;C:\Users\ASUS\AppData\Local\Microsoft\WindowsApps;C:\Users\ASUS\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ASUS\AppData\Roaming\npm;C:\Users\ASUS\Downloads\eclipse-java-2025-12-R-win32-x86_64\eclipse;
+USERNAME=ASUS
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
+TMP=C:\Users\ASUS\AppData\Local\Temp
+TEMP=C:\Users\ASUS\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 26100 (10.0.26100.8328)
+OS uptime: 1 days 17:12 hours
+Hyper-V role detected
+
+CPU: total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 140 stepping 1 microcode 0x86, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, avx512f, avx512dq, avx512cd, avx512bw, avx512vl, sha, fma, vzeroupper, avx512_vpopcntdq, avx512_vpclmulqdq, avx512_vaes, avx512_vnni, clflush, clflushopt, clwb, avx512_vbmi2, avx512_vbmi, hv, rdtscp, rdpid, fsrm, gfni, avx512_bitalg, f16c, cet_ibt, cet_ss, avx512_ifma
+Processor Information for processor 0
+  Max Mhz: 3110, Current Mhz: 3110, Mhz Limit: 3110
+Processor Information for processor 1
+  Max Mhz: 3110, Current Mhz: 3110, Mhz Limit: 3110
+Processor Information for processor 2
+  Max Mhz: 3110, Current Mhz: 1203, Mhz Limit: 3110
+Processor Information for processor 3
+  Max Mhz: 3110, Current Mhz: 3110, Mhz Limit: 3110
+Processor Information for processor 4
+  Max Mhz: 3110, Current Mhz: 1203, Mhz Limit: 3110
+Processor Information for processor 5
+  Max Mhz: 3110, Current Mhz: 3110, Mhz Limit: 3110
+Processor Information for processor 6
+  Max Mhz: 3110, Current Mhz: 3110, Mhz Limit: 3110
+Processor Information for processor 7
+  Max Mhz: 3110, Current Mhz: 3110, Mhz Limit: 3110
+
+Memory: 4k page, system-wide physical 16075M (1831M free)
+TotalPageFile size 18123M (AvailPageFile size 228M)
+current process WorkingSet (physical memory assigned to process): 14M, peak: 14M
+current process commit charge ("private bytes"): 61M, peak: 312M
+
+vm_info: OpenJDK 64-Bit Server VM (21.0.9+10-LTS) for windows-amd64 JRE (21.0.9+10-LTS), built on 2025-10-21T00:00:00Z by "admin" with unknown MS VC++:1942
+
+END.
